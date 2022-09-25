@@ -1,7 +1,7 @@
 from kivymd.app import MDApp
 from kivy.uix.carousel import Carousel
 from kivy.core.audio import SoundLoader
-import pickle
+import pickle5
 
 class MyCarousel(Carousel):
     
@@ -103,25 +103,25 @@ class MyCarousel(Carousel):
         
         if self.model == 1:
             with open("pickles/decision_tree_pickle", "rb") as f:    
-                mp = pickle.load(f)
+                mp = pickle5.load(f)
         elif self.model == 2:
             with open("pickles/sgd_pickle", "rb") as f:    
-                mp = pickle.load(f)
+                mp = pickle5.load(f)
         elif self.model == 3:
             with open("pickles/random_forest_pickle", "rb") as f:    
-                mp = pickle.load(f)
+                mp = pickle5.load(f)
         elif self.model == 4:
             with open("pickles/log_reg_pickle", "rb") as f:    
-                mp = pickle.load(f)
+                mp = pickle5.load(f)
         elif self.model == 5:
             with open("pickles/knn_pickle", "rb") as f:    
-                mp = pickle.load(f)
+                mp = pickle5.load(f)
         elif self.model == 6:
             with open("pickles/gnb_pickle", "rb") as f:    
-                mp = pickle.load(f)
+                mp = pickle5.load(f)
         elif self.model == 7:
             with open("pickles/perceptron_pickle", "rb") as f:    
-                mp = pickle.load(f)
+                mp = pickle5.load(f)
         else:
             print("Something went wrong with pickle loading!")
         
