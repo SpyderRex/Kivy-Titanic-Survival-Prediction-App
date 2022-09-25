@@ -1,0 +1,376 @@
+<MyCarousel>:
+    model_select: model_select
+    
+    direction: "right"
+    BoxLayout:
+        orientation: "vertical"
+        MDLabel:
+            text: "Welcome to the Titanic Survival Prediction App"
+            halign: "center"
+            valign: "center"
+            font_size: 64
+            color: [.34, .45, .56, 1]
+            font_name: "fonts/deliusunicase-bold"
+            background_color: (104/255, 82/255, 93/255, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    source: "images/titanic_image.jpg"
+    
+    BoxLayout:
+        orientation: "vertical"
+        MDLabel:
+            text: "This app ..."
+            
+    BoxLayout:
+        id: model_select
+        decision_tree_model: decision_tree_model
+        sgd_model: sgd_model
+        random_forest_model: random_forest_model
+        log_reg_model: log_reg_model
+        knn_model: knn_model
+        gnb_model: gnb_model
+        perceptron_model: perceptron_model
+        model_label: model_label
+        orientation: "vertical"
+        MDLabel:
+            id: model_label
+            text: "Select your model"
+            font_name: "fonts/deliusunicase-bold"
+            pos_hint: {"center_x": .5, "center_y": .8}
+            font_size: 50
+            size: self.texture_size
+            text_size: self.size
+            halign: 'center'
+            valign:'middle'
+        GridLayout:            
+            cols: 2
+            spacing: "8dp"
+            size_hint: .5, None
+            height: self.minimum_height
+            MDLabel:
+                text: "Decision Tree Classifier"
+                font_name: "fonts/deliusunicase-bold"
+                font_size: 15
+            MDCheckbox:
+                id: decision_tree_model
+                group: "model_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.model_checkbox_click(self, self.active)
+            MDLabel:
+                text: "Stochastic Gradient Descent"
+                font_name: "fonts/deliusunicase-bold"
+                font_size: 15
+            MDCheckbox:
+                id: sgd_model
+                group: "model_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.model_checkbox_click(self, self.active)
+            MDLabel:
+                text: "Random Forest Classifier"
+                font_name: "fonts/deliusunicase-bold"
+                font_size: 15
+            MDCheckbox:
+                id: random_forest_model
+                group: "model_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.model_checkbox_click(self, self.active)
+            MDLabel:
+                text: "Logistic Regression"
+                font_name: "fonts/deliusunicase-bold"
+                font_size: 15
+            MDCheckbox:
+                id: log_reg_model
+                group: "model_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.model_checkbox_click(self, self.active)
+            MDLabel:
+                text: "K Nearest Neighbors"
+                font_name: "fonts/deliusunicase-bold"
+                font_size: 15
+            MDCheckbox:
+                id: knn_model
+                group: "model_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.model_checkbox_click(self, self.active)
+            MDLabel:
+                text: "Gaussian Naive Bayes"
+                font_name: "fonts/deliusunicase-bold"
+                font_size: 15
+            MDCheckbox:
+                id: gnb_model
+                group: "model_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.model_checkbox_click(self, self.active)
+            MDLabel:
+                text: "Perceptron"
+                font_name: "fonts/deliusunicase-bold"
+                font_size: 15
+            MDCheckbox:
+                id: perceptron_model
+                group: "model_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.model_checkbox_click(self, self.active)
+     
+    BoxLayout:
+        first_class: first_class
+        secind_class: second_class
+        third_class: third_class
+        class_label: class_label
+        orientation: "vertical"
+        MDLabel:
+            id: class_label
+            text: "Class"
+            font_name: "fonts/deliusunicase-bold"
+            pos_hint: {"center_x": .5, "center_y": .8}
+            font_size: 50
+            size: self.texture_size
+            text_size: self.size
+            halign: 'center'
+            valign:'middle'
+        GridLayout:
+            cols: 2
+            spacing: "8dp"
+            size_hint: .5, None
+            height: self.minimum_height
+            MDCheckbox:
+                id: first_class
+                group: "class_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.class_checkbox_click(self, self.active)
+            MDLabel:
+                text: "First Class"
+            MDCheckbox:
+                id: second_class
+                group: "class_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.class_checkbox_click(self, self.active)
+            MDLabel:
+                text: "Second Class"
+            MDCheckbox:
+                id: third_class
+                group: "class_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.class_checkbox_click(self, self.active)
+            MDLabel:
+                text: "Third Class"
+                
+    BoxLayout:
+        male: male
+        female: female
+        sex_label: sex_label
+        orientation: "vertical"
+        MDLabel:
+            id: sex_label
+            text: "Sex"
+            font_size: 50
+            font_name: "fonts/deliusunicase-bold"
+            halign: 'center'
+            valign:'top'
+            size: self.texture_size
+        MDLabel:
+            canvas.before:
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    source: "images/male_female.png"
+        ToggleButton:
+            id: male
+            size_hint_y: None
+            height: "100dp"
+            text: "Male"
+            group: "sex_group"
+            on_release: root.sex_toggle(self, self.state)
+        ToggleButton:
+            id: female
+            size_hint_y: None
+            height: "100dp"
+            text: "Female"
+            group: "sex_group"
+            on_release: root.sex_toggle(self, self.state)
+          
+    BoxLayout:
+        age_value: age_value
+        age_label: age_label
+        orientation: "vertical"
+        MDLabel:
+            id: age_label
+            text: "Age"
+            font_name: "fonts/deliusunicase-bold"
+            pos_hint: {"center_x": .5, "center_y": .8}
+            font_size: 50
+            size: self.texture_size
+            text_size: self.size
+            halign: 'center'
+            valign:'middle'
+        MDSlider:
+            id: age_value
+            min: 0
+            max: 100
+            step: 1
+            orientation: "vertical"
+            hint: True
+            hint_bg_color: "red"
+            hint_text_color: "white"
+            size_hint: None, None
+            size: (700, 1000)
+            on_value: root.age_slider_select(self, self.value)
+
+    BoxLayout:
+        sibsp_value: sibsp_value
+        sibsp_label: sibsp_label
+        orientation: "vertical"
+        MDLabel:
+            id: sibsp_label
+            text: "Siblings and Spouses"
+            font_name: "fonts/deliusunicase-bold"
+            pos_hint: {"center_x": .5, "center_y": .8}
+            font_size: 50
+            size: self.texture_size
+            text_size: self.size
+            halign: 'center'
+            valign:'middle'
+        MDSlider:
+            id: sibsp_value
+            min: 0
+            max: 20
+            step: 1
+            orientation: "vertical"
+            hint: True
+            hint_bg_color: "red"
+            hint_text_color: "white"
+            size_hint: None, None
+            size: (700, 1000)
+            on_value: root.sibsp_slider_select(self, self.value)
+            
+    BoxLayout:
+        parch_value: parch_value
+        parch_label: parch_label
+        orientation: "vertical"
+        MDLabel:
+            id: parch_label
+            text: "Parents and Children"
+            font_name: "fonts/deliusunicase-bold"
+            pos_hint: {"center_x": .5, "center_y": .8}
+            font_size: 50
+            size: self.texture_size
+            text_size: self.size
+            halign: 'center'
+            valign:'middle'
+        MDSlider:
+            id: parch_value
+            min: 0
+            max: 20
+            step: 1
+            orientation: "vertical"
+            hint: True
+            hint_bg_color: "red"
+            hint_text_color: "white"
+            size_hint: None, None
+            size: (700, 1000)
+            on_value: root.parch_slider_select(self, self.value)
+
+    BoxLayout:
+        fare_value: fare_value
+        fare_label: fare_label
+        orientation: "vertical"
+        MDLabel:
+            id: fare_label
+            text: "Fare"
+            font_name: "fonts/deliusunicase-bold"
+            pos_hint: {"center_x": .5, "center_y": .8}
+            font_size: 50
+            size: self.texture_size
+            text_size: self.size
+            halign: 'center'
+            valign:'middle'
+        MDSlider:
+            id: fare_value
+            min: 0
+            max: 30
+            step: 0.25
+            orientation: "vertical"
+            hint: True
+            hint_bg_color: "red"
+            hint_text_color: "white"
+            size_hint: None, None
+            size: (700, 1000)
+            on_value: root.fare_slider_select(self, self.value)
+            
+    BoxLayout:
+        cherbourg: cherbourg
+        queenstown: queenstown
+        southampton: southampton
+        embark_label: embark_label
+        orientation: "vertical"
+        MDLabel:
+            id: embark_label
+            text: "Port of embarkation"
+            font_name: "fonts/deliusunicase-bold"
+            pos_hint: {"center_x": .5, "center_y": .8}
+            font_size: 50
+            size: self.texture_size
+            text_size: self.size
+            halign: 'center'
+            valign:'middle'
+        GridLayout:
+            cols: 2
+            spacing: "8dp"
+            size_hint: .5, None
+            height: self.minimum_height
+            MDCheckbox:
+                id: cherbourg 
+                group: "embark_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.embark_checkbox_click(self, self.active)
+            MDLabel:
+                text: "Cherbourg"
+            MDCheckbox:
+                id: queenstown 
+                group: "embark_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.embark_checkbox_click(self, self.active)
+            MDLabel:
+                text: "Queenstown"
+            MDCheckbox:
+                id: southampton
+                group: "embark_group"
+                size_hint_y: None
+                height: "48dp"
+                on_active: root.embark_checkbox_click(self, self.active)
+            MDLabel:
+                text: "Southampton"
+
+    BoxLayout:
+        prediction_label: prediction_label
+        orientation: "vertical"
+        MDLabel:
+            id: prediction_label
+            text: "Survival Prediction"
+            font_name: "fonts/deliusunicase-bold"
+            pos_hint: {"center_x": .5, "center_y": .8}
+            font_size: 50
+            size: self.texture_size
+            text_size: self.size
+            halign: 'center'
+            valign:'middle'
+        MDFillRoundFlatIconButton:
+            icon: "arrow-right"
+            text: "Predict"
+            pos: (275, 400)
+            on_release: root.predict_survival() 
