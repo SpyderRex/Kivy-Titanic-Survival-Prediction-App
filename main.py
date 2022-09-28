@@ -1,7 +1,7 @@
 from kivymd.app import MDApp
 from kivy.uix.carousel import Carousel
 from kivy.core.audio import SoundLoader
-import pickle5
+import joblib
 
 class MyCarousel(Carousel):
     
@@ -102,26 +102,19 @@ class MyCarousel(Carousel):
     def predict_survival(self):
         
         if self.model == 1:
-            with open("pickles/decision_tree_pickle", "rb") as f:    
-                mp = pickle5.load(f)
+            joblib.load("pickles/decision_tree_model.joblib")
         elif self.model == 2:
-            with open("pickles/sgd_pickle", "rb") as f:    
-                mp = pickle5.load(f)
+            joblib.load("pickles/sgd_model.joblib")
         elif self.model == 3:
-            with open("pickles/random_forest_pickle", "rb") as f:    
-                mp = pickle5.load(f)
+            joblib.load("pickles/random_forest_model.joblib")
         elif self.model == 4:
-            with open("pickles/log_reg_pickle", "rb") as f:    
-                mp = pickle5.load(f)
+            joblib.load("pickles/log_reg_model.joblib")
         elif self.model == 5:
-            with open("pickles/knn_pickle", "rb") as f:    
-                mp = pickle5.load(f)
+            joblib.load("pickles/knn_model.joblib")
         elif self.model == 6:
-            with open("pickles/gnb_pickle", "rb") as f:    
-                mp = pickle5.load(f)
+            joblib.load("pickles/gnb_model.joblib")
         elif self.model == 7:
-            with open("pickles/perceptron_pickle", "rb") as f:    
-                mp = pickle5.load(f)
+            joblib.load("pickles/perceptron_model.joblib")
         else:
             print("Something went wrong with pickle loading!")
         
