@@ -27,10 +27,6 @@ class MyCarousel(Carousel):
         elif self.ids.perceptron_model.active == True:
             self.model = 7
             self.ids.model_label.text = "Perceptron"
-        else:
-            print("Something went wrong with model selection!")
-            
-        print(self.model)
         return self.model
         
     def class_checkbox_click(self, instance, value):
@@ -43,9 +39,6 @@ class MyCarousel(Carousel):
         elif self.ids.third_class.active == True:
             self.class_value = 3
             self.ids.class_label.text = "Third class"
-        else:
-            print("Something went wrong with class selection!")
-        print(self.class_value)
         return (self.class_value)
         
     def sex_toggle(self, instance, state):
@@ -55,33 +48,26 @@ class MyCarousel(Carousel):
         elif self.ids.male.state == "down":
             self.sex = 1
             self.ids.sex_label.text = "Male"
-        else:
-            print("Something went wrong with sex selection!")
-        print(self.sex)
         return self.sex
             
     def age_slider_select(self, instance, value):
         self.age = self.ids.age_value.value
         self.ids.age_label.text = str(int(self.age))
-        print(int(self.age))
         return int(self.age)
         
     def sibsp_slider_select(self, instance, value):
         self.sibsp = self.ids.sibsp_value.value
         self.ids.sibsp_label.text = str(int(self.sibsp))
-        print(int(self.sibsp))
         return int(self.sibsp)
         
     def parch_slider_select(self, instance, value):
         self.parch = self.ids.parch_value.value
         self.ids.parch_label.text = str(int(self.parch))
-        print(int(self.parch))
         return int(self.parch)
         
     def fare_slider_select(self, instance, value):
         self.fare = self.ids.fare_value.value
         self.ids.fare_label.text = str(self.fare)
-        print(float(self.fare))
         return float(self.fare)
         
     def embark_checkbox_click(self, instance, value):
@@ -94,9 +80,6 @@ class MyCarousel(Carousel):
         elif self.ids.southampton.active == True:
             self.embark = 2
             self.ids.embark_label.text = "Southampton"
-        else:
-            print("Something went wrong with embark selection!")
-        print(self.embark)
         return self.embark
 
     def predict_survival(self):
@@ -115,12 +98,8 @@ class MyCarousel(Carousel):
             joblib.load("pickles/gnb_model.joblib")
         elif self.model == 7:
             joblib.load("pickles/perceptron_model.joblib")
-        else:
-            print("Something went wrong with pickle loading!")
-        
-        print(self.class_value, self.sex, self.age, self.sibsp, self.parch, self.fare, self.embark)    
+           
         prediction = mp.predict([[self.class_value, self.sex, self.age, self.sibsp, self.parch, self.fare, self.embark]])
-        print(prediction)
         
         if prediction == [0]:
             self.ids.prediction_label.text = "Sorry, your passenger did not survive."
