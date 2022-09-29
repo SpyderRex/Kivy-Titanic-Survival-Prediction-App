@@ -1,7 +1,7 @@
 from kivymd.app import MDApp
 from kivy.uix.carousel import Carousel
 from kivy.core.audio import SoundLoader
-import joblib
+import pickle
 
 class MyCarousel(Carousel):
     
@@ -85,19 +85,26 @@ class MyCarousel(Carousel):
     def predict_survival(self):
         
         if self.model == 1:
-            joblib.load("pickles/decision_tree_model.joblib")
+            with open("decision_tree.pkl", "rb") as f:    
+                mp = pickle.load(f)
         elif self.model == 2:
-            joblib.load("pickles/sgd_model.joblib")
+            with open("sgd.pkl", "rb") as f:    
+                mp = pickle.load(f) 
         elif self.model == 3:
-            joblib.load("pickles/random_forest_model.joblib")
+            with open("random_forest.pkl", "rb") as f:    
+                mp = pickle.load(f)
         elif self.model == 4:
-            joblib.load("pickles/log_reg_model.joblib")
+            with open("log_reg.pkl", "rb") as f:    
+                mp = pickle.load(f)
         elif self.model == 5:
-            joblib.load("pickles/knn_model.joblib")
+            with open("knn.pkl", "rb") as f:    
+                mp = pickle.load(f)
         elif self.model == 6:
-            joblib.load("pickles/gnb_model.joblib")
+            with open("gnb.pkl", "rb") as f:    
+                mp = pickle.load(f) 
         elif self.model == 7:
-            joblib.load("pickles/perceptron_model.joblib")
+            with open("perceptron.pkl", "rb") as f:    
+                mp = pickle.load(f) 
            
         prediction = mp.predict([[self.class_value, self.sex, self.age, self.sibsp, self.parch, self.fare, self.embark]])
         
