@@ -1,5 +1,6 @@
 from kivymd.app import MDApp
 from kivy.uix.carousel import Carousel
+from kivy.core.audio import SoundLoader
 import pickle
 
 class MyCarousel(Carousel):
@@ -109,8 +110,12 @@ class MyCarousel(Carousel):
         
         if prediction == [0]:
             self.ids.prediction_label.text = "Sorry, your passenger did not survive."
+            sound = SoundLoader.load("sounds/sad.wav")
+            sound.play()
         elif prediction == [1]:
             self.ids.prediction_label.text = "Congratulations! Your passenger survived!"
+            sound = SoundLoader.load("sounds/happy.wav")
+            sound.play() 
             
         return prediction
         
