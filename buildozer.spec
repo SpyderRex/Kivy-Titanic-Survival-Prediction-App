@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==1.9.0,kivymd,pillow,ffpyplayer,ffpyplayer_codecs,scikit-learn,joblib,numpy,threadpoolctl
+requirements = python3,kivy==1.9.0,kivymd,pillow,ffpyplayer,ffpyplayer_codecs
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
