@@ -3,6 +3,8 @@ from kivy.uix.carousel import Carousel
 from kivy.core.audio import SoundLoader
 import pickle
 
+kivy.require('1.9.0')
+
 class MyCarousel(Carousel):
     
     def model_checkbox_click(self, instance, value):
