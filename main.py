@@ -3,7 +3,7 @@ from kivy.uix.carousel import Carousel
 from kivy.core.audio import SoundLoader
 import pickle
 
-kivy.require('1.9.0')
+kivy.require('2.0.0')
 
 class MyCarousel(Carousel):
     
