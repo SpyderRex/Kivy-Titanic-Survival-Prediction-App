@@ -87,25 +87,25 @@ class MyCarousel(Carousel):
     def predict_survival(self):
         
         if self.model == 1:
-            with open("decision_tree.pkl", "rb") as f:    
+            with open("pickle/decision_tree.pkl", "rb") as f:    
                 mp = pickle.load(f)
         elif self.model == 2:
-            with open("sgd.pkl", "rb") as f:    
+            with open("pickle/sgd.pkl", "rb") as f:    
                 mp = pickle.load(f) 
         elif self.model == 3:
-            with open("random_forest.pkl", "rb") as f:    
+            with open("pickle/random_forest.pkl", "rb") as f:    
                 mp = pickle.load(f)
         elif self.model == 4:
-            with open("log_reg.pkl", "rb") as f:    
+            with open("pickle/log_reg.pkl", "rb") as f:    
                 mp = pickle.load(f)
         elif self.model == 5:
-            with open("knn.pkl", "rb") as f:    
+            with open("pickle/knn.pkl", "rb") as f:    
                 mp = pickle.load(f)
         elif self.model == 6:
-            with open("gnb.pkl", "rb") as f:    
+            with open("pickle/gnb.pkl", "rb") as f:    
                 mp = pickle.load(f) 
         elif self.model == 7:
-            with open("perceptron.pkl", "rb") as f:    
+            with open("pickle/perceptron.pkl", "rb") as f:    
                 mp = pickle.load(f) 
            
         prediction = mp.predict([[self.class_value, self.sex, self.age, self.sibsp, self.parch, self.fare, self.embark]])
