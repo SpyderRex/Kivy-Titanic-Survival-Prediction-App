@@ -116,7 +116,7 @@ fullscreen = 0
 #android.private_storage = True
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
-#android.ndk_path =
+android.ndk_path = "https://dl.google.com/android/repository/android-ndk-r25b-linux.zip"
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
 #android.sdk_path =
