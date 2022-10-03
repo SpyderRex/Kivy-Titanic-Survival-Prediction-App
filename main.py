@@ -1,3 +1,4 @@
+import kivy
 from kivymd.app import MDApp
 from kivy.uix.carousel import Carousel
 from kivy.core.audio import SoundLoader
