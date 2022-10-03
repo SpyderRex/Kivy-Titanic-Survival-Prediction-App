@@ -16,7 +16,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,ttf,pkl,wav
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = fonts/*.ttf,images/*.png,pickle/*.pkl,sounds/*.wav
+source.include_patterns = fonts/*.ttf,images/*.png,images/*jpg,pickle/*.pkl,sounds/*.wav
 
 # (list) Source files to exclude (let empty to not exclude anything)
 source.exclude_exts = 
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.8.6,kivy==2.0.0,kivymd==1.0.2,pillow==8.4.0,hostpython3==3.8.6,ffpyplayer,ffpyplayer_codecs,sdl2_ttf==2.0.15
+requirements = python3,kivy==2.0.0,kivymd,pillow,hostpython3,ffpyplayer,ffpyplayer_codecs,sdl2_ttf==2.0.15
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
