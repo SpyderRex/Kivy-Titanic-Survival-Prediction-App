@@ -13,10 +13,10 @@ package.domain = org.test
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,ttf,pkl,wav
+source.include_exts = py,png,jpg,kv,atlas,ttf,wav,csv
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = fonts/*.ttf,images/*.png,images/*jpg,pickle/*.pkl,sounds/*.wav
+source.include_patterns = fonts/*.ttf,images/*.png,images/*jpg,sounds/*.wav
 
 # (list) Source files to exclude (let empty to not exclude anything)
 source.exclude_exts = 
