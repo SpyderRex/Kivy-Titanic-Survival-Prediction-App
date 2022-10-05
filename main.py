@@ -3,9 +3,6 @@ from kivymd.app import MDApp
 from kivy.uix.carousel import Carousel
 from kivy.core.audio import SoundLoader
 import pickle
-from android.permissions import request_permissions, Permission
-
-request_permissions([Permission.READ_EXTERNAL_STORAGE])
 
 kivy.require('2.0.0')
 
