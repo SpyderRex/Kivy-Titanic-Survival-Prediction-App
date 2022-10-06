@@ -68,7 +68,7 @@ class MyCarousel(Carousel):
 
     def predict_survival(self):
         
-        data = pd.read_csv("titanic.csv")
+        data = pd.read_csv("dataset/titanic.csv")
 
         data = data.drop(["PassengerId", "Name", "Ticket", "Cabin"], axis="columns")
         data["Age"] = data["Age"].fillna(data["Age"].median())
