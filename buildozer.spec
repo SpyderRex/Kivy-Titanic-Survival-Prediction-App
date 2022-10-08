@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.9.6,kivy==2.0.0,kivymd==0.104.1,pillow,hostpython3==3.9.6,sdl2_ttf==2.0.15
+requirements = python3==3.9.6,kivy==2.0.0,kivymd==0.104.1,pillow,hostpython3==3.9.6,sdl2_ttf==2.20.1
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
@@ -296,7 +296,7 @@ android.allow_backup = True
 #p4a.url =
 
 # (str) python-for-android fork to use in case if p4a.url is not specified, defaults to upstream (kivy)
-p4a.fork = kivy
+p4a.fork = SpyderRex 
 
 # (str) python-for-android branch to use, defaults to master
 p4a.branch = develop
