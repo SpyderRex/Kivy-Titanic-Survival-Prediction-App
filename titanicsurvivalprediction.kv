@@ -9,7 +9,7 @@
             valign: "center"
             font_size: 64
             color: [.34, .45, .56, 1]
-            font_name: "fonts/deliusunicase-bold"
+            font_name: "assets/fonts/deliusunicase-bold"
             background_color: (104/255, 82/255, 93/255, 1)
             canvas.before:
                 Color:
@@ -17,7 +17,7 @@
                 Rectangle:
                     size: self.size
                     pos: self.pos
-                    source: "images/titanic_image.jpg"
+                    source: "assets/images/titanic_image.jpg"
     
     BoxLayout:
         orientation: "vertical"
@@ -34,7 +34,7 @@
         MDLabel:
             id: class_label
             text: "Class"
-            font_name: "fonts/deliusunicase-bold"
+            font_name: "assets/fonts/deliusunicase-bold"
             pos_hint: {"center_x": .5, "center_y": .8}
             font_size: 50
             size: self.texture_size
@@ -80,7 +80,7 @@
             id: sex_label
             text: "Sex"
             font_size: 50
-            font_name: "fonts/deliusunicase-bold"
+            font_name: "assets/fonts/deliusunicase-bold"
             halign: 'center'
             valign:'top'
             size: self.texture_size
@@ -89,7 +89,7 @@
                 Rectangle:
                     size: self.size
                     pos: self.pos
-                    source: "images/male_female.png"
+                    source: "assets/images/male_female.png"
         ToggleButton:
             id: male
             size_hint_y: None
@@ -112,7 +112,7 @@
         MDLabel:
             id: age_label
             text: "Age"
-            font_name: "fonts/deliusunicase-bold"
+            font_name: "assets/fonts/deliusunicase-bold"
             pos_hint: {"center_x": .5, "center_y": .8}
             font_size: 50
             size: self.texture_size
@@ -139,7 +139,7 @@
         MDLabel:
             id: sibsp_label
             text: "Siblings and Spouses"
-            font_name: "fonts/deliusunicase-bold"
+            font_name: "assets/fonts/deliusunicase-bold"
             pos_hint: {"center_x": .5, "center_y": .8}
             font_size: 50
             size: self.texture_size
@@ -166,7 +166,7 @@
         MDLabel:
             id: parch_label
             text: "Parents and Children"
-            font_name: "fonts/deliusunicase-bold"
+            font_name: "assets/fonts/deliusunicase-bold"
             pos_hint: {"center_x": .5, "center_y": .8}
             font_size: 50
             size: self.texture_size
@@ -193,7 +193,7 @@
         MDLabel:
             id: fare_label
             text: "Fare"
-            font_name: "fonts/deliusunicase-bold"
+            font_name: "assets/fonts/deliusunicase-bold"
             pos_hint: {"center_x": .5, "center_y": .8}
             font_size: 50
             size: self.texture_size
@@ -222,7 +222,7 @@
         MDLabel:
             id: embark_label
             text: "Port of embarkation"
-            font_name: "fonts/deliusunicase-bold"
+            font_name: "assets/fonts/deliusunicase-bold"
             pos_hint: {"center_x": .5, "center_y": .8}
             font_size: 50
             size: self.texture_size
@@ -265,7 +265,7 @@
         MDLabel:
             id: prediction_label
             text: "Survival Prediction"
-            font_name: "fonts/deliusunicase-bold"
+            font_name: "assets/fonts/deliusunicase-bold"
             pos_hint: {"center_x": .5, "center_y": .8}
             font_size: 50
             size: self.texture_size
