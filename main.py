@@ -65,7 +65,7 @@ class MyCarousel(Carousel):
     def predict_survival(self):
         
         self.ids.prediction_label.text = "No prediction code yet, but this button works!"
-        sound = SoundLoader.load("sounds/happy.wav")
+        sound = SoundLoader.load("assets/sounds/happy.wav")
         sound.play()
         
     
