@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.9.9,kivy==master,https://github.com/kivymd/KivyMD/archive/master.zip,pillow,hostpython3==3.9.9,sdl2_ttf==2.20.1
+requirements = python3==3.9.9,kivy==master,https://github.com/kivymd/KivyMD/archive/master.zip,pillow,hostpython3==3.9.9,sdl2_ttf==2.20.1,pyjnius
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
@@ -98,7 +98,7 @@ fullscreen = 0
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 27
+android.api = 29
 
 # (int) Minimum API your APK / AAB will support.
 #android.minapi = 21
@@ -228,7 +228,7 @@ android.accept_sdk_license = 1
 
 # (list) Android additional libraries to copy into libs/armeabi
 #android.add_libs_armeabi = libs/android/*.so
-#android.add_libs_armeabi_v7a = libs/android-v7/*.so
+android.add_libs_armeabi_v7a = libs/android-v7/*.so
 #android.add_libs_arm64_v8a = libs/android-v8/*.so
 #android.add_libs_x86 = libs/android-x86/*.so
 #android.add_libs_mips = libs/android-mips/*.so
